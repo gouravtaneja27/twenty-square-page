@@ -57,7 +57,7 @@ const Hero = () => {
                             text="Square Your Photos"
                         />
                     </div>
-                    <div className="w-full max-w-[500px]">
+                    <div className="w-full ">
                         <Slider />
                     </div>
                 </div>
