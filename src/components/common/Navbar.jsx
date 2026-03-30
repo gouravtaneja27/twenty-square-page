@@ -101,10 +101,7 @@ const Navbar = () => {
                         text="Download App"
                         icon="download"
                     />
-                    <Button
-                        className="flex items-center justify-center border border-[#EDEDED] p-3 rounded-full"
-                        icon="cart"
-                    />
+                   
                     <Button
                         className="flex items-center justify-center gap-2.5 py-3 px-6 bg-[#ED1C25] text-white rounded-full"
                         text="Sign Up / Log In"
