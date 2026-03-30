@@ -14,7 +14,7 @@ export const metadata = {
   openGraph: {
     title: "Twenty Square",
     description: "A wonderful way to Transform your walls.",
-    images: ["public/layout.png"],
+    images: ["public/assets/layout.png"],
   },
 };
 
