@@ -1,121 +1,117 @@
 "use client";
-import { navLInks } from "@/utils/helper";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { navLInks as menuItems } from "@/utils/helper";
 import Button from "./Button";
-
 const Navbar = () => {
-    const [scrolled, setScrolled] = useState(false);
-    const [menuOpen, setMenuOpen] = useState(false);
+    const [isSticky, setIsSticky] = useState(false);
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 1);
+        const onScroll = () => {
+            setIsSticky(window.scrollY > 1);
         };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
     }, []);
+    const openDrawer = () => setIsDrawerOpen(true);
+    const closeDrawer = () => setIsDrawerOpen(false);
     return (
-        <div className="w-full mx-auto fixed top-0 z-20">
-            {/* Navbar */}
+        <header className="w-full fixed top-0 z-20">
             <div
-                className={`max-w-360 w-full mx-auto px-4 sm:px-6 pt-3 pb-3.25 flex items-center justify-between transition-all duration-300 ${scrolled
-                        ? "bg-white shadow-md"
-                        : "bg-[linear-gradient(180deg,#FFFFFF_0%,rgba(255,255,255,0)_100%)]"
+                className={`max-w-360 mx-auto px-4 sm:px-6 py-3 flex items-center justify-between transition-all duration-300 ${isSticky
+                    ? "bg-white shadow-md"
+                    : "bg-[linear-gradient(180deg,#FFFFFF_0%,rgba(255,255,255,0)_100%)]"
                     }`}
             >
-                {/* Logo */}
-                <a href="">
+                <a href="/">
                     <img
                         src="/assets/logo.webp"
-                        alt="logo"
-                        className="w-[80px] sm:w-[90.47px] h-auto"
+                        alt="brand-logo"
+                        className="w-[80px] sm:w-[90px]"
                     />
                 </a>
-                {/* Desktop Menu */}
-                <div className="hidden lg:flex items-center justify-between gap-29.75">
-                    <div className="flex items-center gap-10.25">
-                        {navLInks.map((item, index) => (
+                <nav className="hidden lg:flex items-center justify-between gap-[120px]">
+                    <div className="flex items-center gap-10">
+                        {menuItems.map((link, i) => (
                             <Link
-                                key={index}
-                                href={item.url}
-                                className="font-normal text-base text-black hover:text-[#ED1C25]"
+                                key={`nav-${i}`}
+                                href={link.url}
+                                className="text-base text-black hover:text-[#ED1C25]"
                             >
-                                {item.title}
+                                {link.title}
                             </Link>
                         ))}
                     </div>
-                    <div className="flex items-center gap-2.5">
+
+                    <div className="flex items-center gap-3">
                         <Button
-                            className="flex items-center gap-2.5 py-3.5 px-6 border border-[#EDEDED] font-semibold text-base text-black rounded-[82px]"
+                            className="flex items-center gap-2.5 py-3 px-6 border border-[#EDEDED] text-black rounded-full"
                             text="Download App"
                             icon="download"
                         />
+
                         <Button
-                            className="flex items-center border border-[#EDEDED] p-[13.5px] rounded-[82px]"
+                            className="flex items-center border border-[#EDEDED] p-3 rounded-full"
                             icon="cart"
                         />
+
                         <Button
-                            className="flex items-center gap-2.5 py-3 px-6 bg-[#ED1C25] font-semibold text-base text-white rounded-[82px]"
-                            text="Sign Up/Log In"
+                            className="flex items-center gap-2.5 py-3 px-6 bg-[#ED1C25] text-white rounded-full"
+                            text="Sign Up / Log In"
                         />
                     </div>
-                </div>
-                {/* Hamburger */}
+                </nav>
                 <button
+                    onClick={openDrawer}
                     className="lg:hidden flex flex-col gap-1"
-                    onClick={() => setMenuOpen(true)}>
+                >
                     <span className="w-6 h-[2px] bg-black"></span>
                     <span className="w-6 h-[2px] bg-black"></span>
                     <span className="w-6 h-[2px] bg-black"></span>
                 </button>
             </div>
-            {/* Overlay */}
             <div
-                className={`fixed inset-0 bg-black/30 z-20 transition-opacity duration-300 ${menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                onClick={closeDrawer}
+                className={`fixed inset-0 bg-black/30 z-20 transition-all duration-300 ${isDrawerOpen ? "opacity-100 visible" : "opacity-0 invisible"
                     }`}
-                onClick={() => setMenuOpen(false)}
-            ></div>
-            {/* Right Drawer */}
-            <div
-                className={`fixed top-0 right-0 h-full w-full bg-white z-30 shadow-lg transform transition-transform duration-300 ease-in-out ${menuOpen ? "translate-x-0" : "translate-x-full"
+            />
+            <aside
+                className={`fixed top-0 right-0 h-full w-full bg-white z-30 shadow-lg transform transition-transform duration-300 ${isDrawerOpen ? "translate-x-0" : "translate-x-full"
                     }`}
             >
-                <div className="p-6 flex items-center flex-col gap-5">
-                    {/* Close Button */}
+                <div className="p-6 flex flex-col items-center gap-5">
                     <button
+                        onClick={closeDrawer}
                         className="self-end text-2xl"
-                        onClick={() => setMenuOpen(false)}
                     >
                         ✕
                     </button>
-                    {/* Nav Links */}
-                    {navLInks.map((item, index) => (
+                    {menuItems.map((link, i) => (
                         <Link
-                            key={index}
-                            href={item.url}
-                            className="text-black text-base"
-                            onClick={() => setMenuOpen(false)}
+                            key={`mobile-${i}`}
+                            href={link.url}
+                            className="text-base text-black"
+                            onClick={closeDrawer}
                         >
-                            {item.title}
+                            {link.title}
                         </Link>
                     ))}
-                    {/* Buttons */}
                     <Button
-                        className="flex items-center justify-center gap-2.5 py-3 px-6 border border-[#EDEDED] text-black rounded-[82px]"
+                        className="flex items-center justify-center gap-2.5 py-3 px-6 border border-[#EDEDED] text-black rounded-full"
                         text="Download App"
                         icon="download"
                     />
                     <Button
-                        className="flex items-center justify-center border border-[#EDEDED] p-3 rounded-[82px]"
+                        className="flex items-center justify-center border border-[#EDEDED] p-3 rounded-full"
                         icon="cart"
                     />
                     <Button
-                        className="flex items-center justify-center gap-2.5 py-3 px-6 bg-[#ED1C25] text-white rounded-[82px]"
-                        text="Sign Up/Log In"
+                        className="flex items-center justify-center gap-2.5 py-3 px-6 bg-[#ED1C25] text-white rounded-full"
+                        text="Sign Up / Log In"
                     />
                 </div>
-            </div>
-        </div>
+            </aside>
+        </header>
     );
 };
 
