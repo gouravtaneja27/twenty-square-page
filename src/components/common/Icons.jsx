@@ -7,13 +7,12 @@ const Icons = ({ icon, className = "" }) => {
                 width="19"
                 height="19"
                 viewBox="0 0 19 19"
-                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className={`${className} custom-class`}
+                className={`${className} transition-colors duration-200`}
             >
                 <path
                     d="M15.042 7.125H11.8753V2.375H7.12533V7.125H3.95866L9.50033 13.4583L15.042 7.125ZM3.16699 15.0417H15.8337V16.625H3.16699V15.0417Z"
-                    fill="black"
+                    fill="currentColor"
                 />
             </svg>
         ),

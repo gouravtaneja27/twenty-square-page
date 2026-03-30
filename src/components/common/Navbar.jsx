@@ -45,7 +45,7 @@ const Navbar = () => {
 
                     <div className="flex items-center gap-3">
                         <Button
-                            className="flex items-center gap-2.5 py-3 px-6 border border-[#EDEDED] text-black rounded-full"
+                            className=" group flex items-center gap-2.5  py-3 px-6  border border-[#EDEDED]  text-black   rounded-full  transition-all duration-300 ease-in-out hover:bg-black  hover:text-white  hover:border-black"
                             text="Download App"
                             icon="download"
                         />
@@ -54,9 +54,8 @@ const Navbar = () => {
                             className="flex items-center border border-[#EDEDED] p-3 rounded-full"
                             icon="cart"
                         />
-
                         <Button
-                            className="flex items-center gap-2.5 py-3 px-6 bg-[#ED1C25] text-white rounded-full"
+                            className=" flex items-center gap-2.5 py-3 px-6 bg-[#ED1C25] text-white rounded-full transition-colors duration-200  hover:bg-[#c9151d]"
                             text="Sign Up / Log In"
                         />
                     </div>
@@ -101,7 +100,7 @@ const Navbar = () => {
                         text="Download App"
                         icon="download"
                     />
-                   
+
                     <Button
                         className="flex items-center justify-center gap-2.5 py-3 px-6 bg-[#ED1C25] text-white rounded-full"
                         text="Sign Up / Log In"
