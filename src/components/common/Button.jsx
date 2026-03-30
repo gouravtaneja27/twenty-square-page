@@ -7,4 +7,4 @@ const Button = ({ text, className, icon }) => {
     )
 }
 
-export default Button
+export default Button;

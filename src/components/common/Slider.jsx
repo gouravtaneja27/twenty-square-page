@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
-import { sliderDATA } from "@/utils/helper";
+import { sliderDAta } from "@/utils/helper";
 
 const Slider = () => {
   return (
@@ -19,7 +19,7 @@ const Slider = () => {
         clickable: true,
       }}
     >
-      {sliderDATA.map((item, index) => (
+      {sliderDAta.map((item, index) => (
         <SwiperSlide key={index}>
           <Image
             src={item.src}
