@@ -5,12 +5,12 @@ import Slider from "./common/Slider";
 
 const Hero = () => {
     return (
-        <div className="absolute inset-0 flex items-start mt-20 sm:mt-28 lg:mt-39.25 justify-center px-4">
+        <div className="lg:absolute inset-0 flex items-start mt-20 sm:mt-28 lg:mt-39.25 justify-center px-4 lg:px-2">
             <div className="flex flex-col items-center w-full">
-                <h1 className="font-semibold max-w-[728px] text-center text-3xl sm:text-5xl lg:text-7xl leading-[130%] bg-gradient-to-r from-black to-[#494949] bg-clip-text text-transparent">
+                <h1 className="font-semibold max-w-182 text-center text-3xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[130%] bg-gradient-to-r from-black to-[#494949] bg-clip-text text-transparent">
                     A wonderful way to Transform your walls.
                 </h1>
-                <p className="mt-4 sm:mt-6 max-w-[680px] text-center font-medium text-sm sm:text-lg lg:text-xl leading-[140%] text-black">
+                <p className="mt-4 sm:mt-6 max-w-170 text-center font-medium text-sm lg:text-lg xl:text-xl leading-[140%] text-black">
                     No matter your decorating style, we've got the tricks that can give life to your
                     walls and bring out your true personality.
                 </p>
@@ -18,12 +18,12 @@ const Hero = () => {
                     className="mt-5 sm:mt-6 flex items-center py-2 sm:py-3 px-5 sm:px-[24.5px] font-semibold text-sm sm:text-lg lg:text-xl text-white rounded-[82px] bg-[#ED1C25] shadow-[0px_12px_43.8px_-10px_#ED1C25]"
                     text="Square Your Photos"
                 />
-                <p className="mt-12 sm:mt-20 lg:mt-[89px] font-normal text-[12px] leading-[100%] text-[#1E1E1E]">
+                <p className="mt-12 sm:mt-20 lg:mt-22.25 font-normal text-[12px] leading-[100%] text-[#1E1E1E]">
                     <Icons icon={"arrow"} />
                 </p>
-                <div className="flex flex-col lg:flex-row w-full mt-20 sm:mt-32 lg:mt-[349px] items-center justify-center gap-10 lg:gap-7.75">
-                    <div className="w-full max-w-[540px]">
-                        <h2 className="font-semibold text-3xl sm:text-5xl lg:text-7xl leading-[130%] bg-gradient-to-r from-black to-[#494949] bg-clip-text text-transparent">
+                <div className="flex flex-col lg:flex-row w-full mt-20 sm:mt-32 lg:mt-87.25 items-center justify-center gap-10 lg:gap-7.75">
+                    <div className="w-full max-w-137.5">
+                        <h2 className="font-semibold text-3xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[130%] bg-gradient-to-r from-black to-[#494949] bg-clip-text text-transparent">
                             It's so simple, even a child can do it.
                         </h2>
                         <div className="mt-6 sm:mt-6.75">
