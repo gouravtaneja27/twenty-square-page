@@ -8,19 +8,13 @@ const interTight = Inter_Tight({
   variable: "--font-inter-tight",
   subsets: ["latin"],
 });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
-
 export const metadata = {
   title: "Twenty Square",
   description: "A wonderful way to Transform your walls.",
   openGraph: {
     title: "Twenty Square",
     description: "A wonderful way to Transform your walls.",
-    images: ["/Home.png"],
+    images: ["./Home.png"],
   },
 };
 
