@@ -1,4 +1,4 @@
-export const navLInks = [
+export const NAVLINKS = [
     {
         title: "Home",
         url: "/",
@@ -17,7 +17,7 @@ export const navLInks = [
     }
 ];
 
-export const sliderDAta = [
+export const sliderDATA = [
     {
         src: "/assets/slider-img.jpg",
     },

@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { navLInks as menuItems } from "@/utils/helper";
+import { NAVLINKS as menuItems } from "@/utils/helper";
 import Button from "./Button";
 const Navbar = () => {
     const [isSticky, setIsSticky] = useState(false);
