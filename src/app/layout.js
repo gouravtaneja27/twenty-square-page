@@ -8,13 +8,14 @@ const interTight = Inter_Tight({
   variable: "--font-inter-tight",
   subsets: ["latin"],
 });
+
 export const metadata = {
   title: "Twenty Square",
   description: "A wonderful way to Transform your walls.",
   openGraph: {
     title: "Twenty Square",
     description: "A wonderful way to Transform your walls.",
-    images: ["public/assets/layout.png"],
+    images: ["/layout.png"],
   },
 };
 
